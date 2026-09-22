@@ -1,0 +1,345 @@
+/* Mine farver */
+
+:root {
+    --dark: #223030;
+    --darker: #0E1414;
+    --green: #4F7070;
+    --red: #9E2A2B;
+    --white: #FFFFFF;
+}
+
+
+/* Generelt */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* Header */
+
+.header {
+    padding: 40px;
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.header h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.header-text {
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.header-text a {
+    color: var(--white);
+}
+
+
+/* Nav bar */
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+nav a {
+    padding: 1rem;
+
+    text-decoration: none;
+    color: var(--white);
+
+    font-size: 21px;
+
+    border-bottom: 2px solid transparent;
+
+    transition: border-bottom 0.4s ease-in;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--white);
+}
+
+
+/* Overskrifter */
+
+h2 {
+    padding: 50px;
+
+    text-align: center;
+
+    font-size: 60px;
+
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+
+/* Cards / bokse */
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+
+    min-height: 300px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+}
+
+.column:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.column-green {
+    background-color: var(--green);
+}
+
+.column-dark {
+    background-color: var(--darker);
+}
+
+.column h3 {
+    color: var(--white);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.column p {
+    color: var(--white);
+    font-size: 20px;
+}
+
+.card-title{
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.card-text{
+    position: absolute;
+    max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.column:hover .card-title{
+    opacity: 0;
+}
+.column:hover .card-text{
+    opacity: 1;
+}
+
+/* 'Projekter' sektion */
+
+.container {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 50px auto;
+
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 40px;
+
+    color: var(--dark);
+}
+
+.container img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.centered {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    color: var(--dark);
+}
+
+
+/* Hobbyer sektion */
+
+.hobbies {
+    padding: 50px;
+
+    color: var(--dark);
+    font-size: 30px;
+
+    text-align: center;
+}
+
+.hobbies li {
+    margin: 2rem;
+    font-size: large;
+    list-style: none;
+    list-style-position: inside;
+}
+
+
+
+
+/* Footer sektion */
+
+footer {
+    padding: 40px;
+
+    background-color: var(--dark);
+    color: var(--white);
+
+    font-size: 23px;
+}
+
+footer h4 {
+    margin-bottom: 25px;
+}
+
+footer a {
+    color: var(--white);
+}
+
+.custom-footer-logo {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.custom-footer-logo a {
+    flex: 0 0 auto;
+}
+
+.custom-footer-logo img {
+    width: 70px;
+    max-width: 100%;
+
+    transition: transform 0.3s ease;
+}
+
+.custom-footer-logo img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Mobil tilpasning query */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .header-text {
+        font-size: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+
+        margin-top: 20px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    h2 {
+        padding: 30px 15px;
+        font-size: 40px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .column {
+        min-height: 220px;
+    }
+
+    .column h3 {
+        font-size: 30px;
+    }
+
+    .column p {
+        font-size: 18px;
+    }
+
+    .container {
+        margin: 30px auto;
+        font-size: 25px;
+    }
+
+    .hobbies {
+        padding: 30px 15px;
+        font-size: 22px;
+    }
+
+    footer {
+        padding: 30px 20px;
+        font-size: 18px;
+    }
+
+    .custom-footer-logo {
+        justify-content: center;
+    }
+
+    .custom-footer-logo img {
+        width: 55px;
+    }
+}
